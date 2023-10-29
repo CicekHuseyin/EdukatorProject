@@ -1,0 +1,30 @@
+Asp.Net Core projesinde var olan bir mimari içerisine eklediğimiz entity i mimariye Uygulama Aşamaları:
+-Entity/Concreate/SocialMedia entity ekle
+public class SocialMedia
+	{
+		public int SocialMediaID { get; set; }
+		public string SocialMediaName { get; set; }
+		public string SocialMediaIcon { get; set; }
+		public string SocialMediaUrl { get; set; }
+	}
+-Ekledğimiz entity i DataAccess/Concreate/Context classına Db set olarak ekle
+public DbSet<SocialMedia> SocialMedias { get; set; }
+-Package Manage Console aç. Migration işlemini yaparak entity yi SQL e aktar.
+add-migration mig1
+sonra
+update-migration
+-DataAccess/Abstract/ISocialMediaDal adında bir interface ekle. Ve oluşturmuş olduğumuz Generic Repositoryden miras al.
+public interface ISocialMediDal : IGenericDal<SocialMedia>
+	{
+	}
+-DataAccess/EntityFreamework/EfSocialMediaDal adında bir class ekle. GenericRepository ve ISocialMediaDal dan miras al.
+public class EfSocialMediaDal : GenericRepository<SocialMedia>, ISocialMediaDal
+	{
+	}
+Ve Entity miz mimariye dahil oldu.
+
+--Manager tarafında tanımladığımız constructer yapılarını backend de ayağa kaldırmak için startup dosyasına şunları eklememiz gerekir--
+			
+			services.AddDbContext<Context>();
+			services.AddScoped<ICategoryDal, EfCategoryDal>();
+			services.AddScoped<ICategoryService,CategoryManager>();

@@ -19,9 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EntityFreamework\" />
     <Folder Include="obj\Debug\net5.0\refint\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
