@@ -5,10 +5,61 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net5.0\Edukator.DataAccessLayer.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0\Edukator.DataAccessLayer.deps.json" />
+    <Content Include="bin\Debug\net5.0\Edukator.DataAccessLayer.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\net5.0\Edukator.DataAccessLayer.runtimeconfig.json" />
+    <Content Include="obj\Debug\net5.0\Edukator.DataAccessLayer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Edukator.DataAccessLayer.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="EntityFreamework\" />
+    <Folder Include="obj\Debug\net5.0\refint\" />
     <Folder Include="Repositories\" />
-    <Folder Include="Concrete\" />
-    <Folder Include="Abstract\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net5.0\Edukator.DataAccessLayer.dll" />
+    <None Include="bin\Debug\net5.0\Edukator.DataAccessLayer.pdb" />
+    <None Include="bin\Debug\net5.0\Edukator.EntityLayer.dll" />
+    <None Include="bin\Debug\net5.0\Edukator.EntityLayer.pdb" />
+    <None Include="bin\Debug\net5.0\ref\Edukator.DataAccessLayer.dll" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.assets.cache" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.csproj.CopyComplete" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.dll" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net5.0\Edukator.DataAccessLayer.pdb" />
+    <None Include="obj\Debug\net5.0\ref\Edukator.DataAccessLayer.dll" />
+    <None Include="obj\Edukator.DataAccessLayer.csproj.nuget.g.props" />
+    <None Include="obj\Edukator.DataAccessLayer.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Edukator.EntityLayer\Edukator.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>
