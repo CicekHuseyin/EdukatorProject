@@ -31,6 +31,10 @@ namespace Presentation.Layer
 			services.AddDbContext<Context>();
 			services.AddScoped<ICategoryDal, EfCategoryDal>();
 			services.AddScoped<ICategoryService,CategoryManager>();
+
+			services.AddScoped<ICourseDal, EfCourseDal>();
+			services.AddScoped<ICourseService, CourseManager>();
+
 			services.AddControllersWithViews();
 		}
 
