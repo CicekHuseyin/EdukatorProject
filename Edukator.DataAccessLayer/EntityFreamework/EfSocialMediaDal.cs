@@ -1,4 +1,5 @@
-﻿using Edukator.DataAccessLayer.Repositories;
+﻿using Edukator.DataAccessLayer.Abstract;
+using Edukator.DataAccessLayer.Repositories;
 using Edukator.EntityLayer.Concreate;
 using System;
 using System.Collections.Generic;

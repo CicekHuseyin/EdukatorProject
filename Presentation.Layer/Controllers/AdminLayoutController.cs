@@ -28,5 +28,13 @@ namespace Edukator.PresentationLayer.Controllers
 		{
 			return PartialView();
 		}
+		public PartialViewResult PartialFooter()
+		{
+			return PartialView();
+		}
+		public PartialViewResult PartialScript()
+		{
+			return PartialView();
+		}
 	}
 }

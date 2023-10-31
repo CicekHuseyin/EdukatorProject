@@ -35,6 +35,9 @@ namespace Presentation.Layer
 			services.AddScoped<ICourseDal, EfCourseDal>();
 			services.AddScoped<ICourseService, CourseManager>();
 
+			services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+			services.AddScoped<ISocialMediaService, SocialMediaManager>();
+
 			services.AddControllersWithViews();
 		}
 
