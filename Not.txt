@@ -28,3 +28,5 @@ Ve Entity miz mimariye dahil oldu.
 			services.AddDbContext<Context>();
 			services.AddScoped<ICategoryDal, EfCategoryDal>();
 			services.AddScoped<ICategoryService,CategoryManager>();
+
+--AspNetUsers tablosunda ki password ottomatik şifreleme ister(en az 6 karakter, büyük küçük harf sayı vb.)
