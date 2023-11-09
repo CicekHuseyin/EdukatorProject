@@ -39,6 +39,12 @@ namespace Presentation.Layer
 			services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 			services.AddScoped<ISocialMediaService, SocialMediaManager>();
 
+			services.AddScoped<IFeatureDal, EfFeatureDal>();
+			services.AddScoped<IFeatureService, FeatureManager>();
+
+			services.AddScoped<IAboutGridDal, EfAboutGridDal>();
+			services.AddScoped<IAboutGridService, AboutGridManager>();
+
 			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 			//Identity de sadece iliþkili eklediðimiz tablolarý ekledim.(Appuser,approle)
 

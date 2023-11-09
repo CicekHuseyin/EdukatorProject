@@ -19,6 +19,27 @@ namespace Edukator.DataAccessLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Edukator.EntityLayer.Concreate.AboutGrid", b =>
+                {
+                    b.Property<int>("AboutGridID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AboutGridID");
+
+                    b.ToTable("AboutGrids");
+                });
+
             modelBuilder.Entity("Edukator.EntityLayer.Concreate.AppRole", b =>
                 {
                     b.Property<int>("Id")
@@ -230,6 +251,27 @@ namespace Edukator.DataAccessLayer.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("Edukator.EntityLayer.Concreate.Feature", b =>
+                {
+                    b.Property<int>("FeatureID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FeatureID");
+
+                    b.ToTable("Features");
                 });
 
             modelBuilder.Entity("Edukator.EntityLayer.Concreate.SocialMedia", b =>

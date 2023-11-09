@@ -21,6 +21,45 @@ public interface ISocialMediDal : IGenericDal<SocialMedia>
 public class EfSocialMediaDal : GenericRepository<SocialMedia>, ISocialMediaDal
 	{
 	}
+-Business/Abstract/ISocialMediaService içerisine interface i tanımla
+public interface ISocialMediaService : IGenericService<SocialMedia>
+	{
+	}
+-Business/Concreate/SocialMediaManager içerisine Abstract da tanımladığın servisi çek. İmplement et.
+public class SocialMediaManager : ISocialMediaService
+	{
+		private readonly ISocialMediaDal _socialMediaDal;
+
+		public SocialMediaManager(ISocialMediaDal socialMediaDal)
+		{
+			_socialMediaDal = socialMediaDal;
+		}
+
+		public void TDelete(SocialMedia t)
+		{
+			_socialMediaDal.Delete(t);
+		}
+
+		public SocialMedia TGetByID(int id)
+		{
+			return _socialMediaDal.GetByID(id);
+		}
+
+		public List<SocialMedia> TGetList()
+		{
+			return _socialMediaDal.GetList();
+		}
+
+		public void TInsert(SocialMedia t)
+		{
+			_socialMediaDal.Insert(t);
+		}
+
+		public void TUpdate(SocialMedia t)
+		{
+			_socialMediaDal.Update(t);
+		}
+	}
 Ve Entity miz mimariye dahil oldu.
 
 --Manager tarafında tanımladığımız constructer yapılarını backend de ayağa kaldırmak için startup dosyasına şunları eklememiz gerekir--
