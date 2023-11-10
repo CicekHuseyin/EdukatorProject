@@ -69,3 +69,22 @@ Ve Entity miz mimariye dahil oldu.
 			services.AddScoped<ICategoryService,CategoryManager>();
 
 --AspNetUsers tablosunda ki password ottomatik şifreleme ister(en az 6 karakter, büyük küçük harf sayı vb.)
+
+--Entity e özgü metot yazma ve mimariye eklenme aşamaları: Öncelikle enity e özgü metot yazmamızın sebebi tablo başka bir tablo ile ilişkili olduğu için ve o ilişkili tablonun verilerini de kullanabilmek için.
+
+-DataAccess/Abstract/ICourseDal içine metotu yaz.
+List<Course> GetCoursesWithCategories();
+-DataAccess/EntityFreamework/EfCourseDal içine implemnt et
+public List<Course> GetCoursesWithCategories()
+		{
+			Context context = new Context();
+			return context.Courses.Include(x => x.Category).ToList();
+		}
+-Business/Abstract/ICourseService içerisine metot yaz.
+List<Course> TGetCoursesWithCategories();
+-Business/Concreate/CourseManager içeriisne implement et 
+public List<Course> TGetCoursesWithCategories()
+		{
+			return _courseDal.GetList();
+		}
+--Bu şekilde Course ve Category tablosunun verilerini kullanabiliriz.
