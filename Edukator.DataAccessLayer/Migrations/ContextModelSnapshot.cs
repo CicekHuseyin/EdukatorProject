@@ -274,6 +274,21 @@ namespace Edukator.DataAccessLayer.Migrations
                     b.ToTable("Features");
                 });
 
+            modelBuilder.Entity("Edukator.EntityLayer.Concreate.MailSubscribe", b =>
+                {
+                    b.Property<int>("MailSubscribeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("MailSubscribeMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MailSubscribeID");
+
+                    b.ToTable("MailSubscribes");
+                });
+
             modelBuilder.Entity("Edukator.EntityLayer.Concreate.SocialMedia", b =>
                 {
                     b.Property<int>("SocialMediaID")

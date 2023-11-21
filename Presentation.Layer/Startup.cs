@@ -45,6 +45,9 @@ namespace Presentation.Layer
 			services.AddScoped<IAboutGridDal, EfAboutGridDal>();
 			services.AddScoped<IAboutGridService, AboutGridManager>();
 
+			services.AddScoped<IMailSubscribeDal, EfMailSubscribeDal>();
+			services.AddScoped<IMailSubscribeService, MailSubscribeManager>();
+
 			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 			//Identity de sadece iliþkili eklediðimiz tablolarý ekledim.(Appuser,approle)
 
