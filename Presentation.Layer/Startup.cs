@@ -4,6 +4,7 @@ using Edukator.DataAccessLayer.Abstract;
 using Edukator.DataAccessLayer.Concrete;
 using Edukator.DataAccessLayer.EntityFreamework;
 using Edukator.EntityLayer.Concreate;
+using Edukator.PresentationLayer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -48,7 +49,7 @@ namespace Presentation.Layer
 			services.AddScoped<IMailSubscribeDal, EfMailSubscribeDal>();
 			services.AddScoped<IMailSubscribeService, MailSubscribeManager>();
 
-			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 			//Identity de sadece iliþkili eklediðimiz tablolarý ekledim.(Appuser,approle)
 
 			services.AddControllersWithViews();
