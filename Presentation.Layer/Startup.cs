@@ -49,7 +49,13 @@ namespace Presentation.Layer
 			services.AddScoped<IMailSubscribeDal, EfMailSubscribeDal>();
 			services.AddScoped<IMailSubscribeService, MailSubscribeManager>();
 
-			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+            services.AddScoped<ICourseRegisterDal, EfCourseRegisterDal>();
+            services.AddScoped<ICourseRegisterService, CourseRegisterManager>();
+
+            services.AddScoped<IContactDal, EfContactDal>();
+            services.AddScoped<IContactService, ContactManager>();
+
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 			//Identity de sadece iliþkili eklediðimiz tablolarý ekledim.(Appuser,approle)
 
 			services.AddControllersWithViews();
@@ -79,7 +85,7 @@ namespace Presentation.Layer
 			{
 				endpoints.MapControllerRoute(
 					name: "default",
-					pattern: "{controller=Home}/{action=Index}/{id?}");
+					pattern: "{controller=Default}/{action=Index}/{id?}");
 			});
 		}
 	}
