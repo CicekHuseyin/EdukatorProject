@@ -14,7 +14,7 @@ namespace Edukator.PresentationLayer.ViewComponents.Dashboard
 
         public IViewComponentResult Invoke()
         {
-            var values = _courseRegisterService.CourseRegisterListWithCoursesAndUsers();
+            var values = _courseRegisterService.TCourseRegisterListWithCoursesAndUsers();
             return View(values);
         }
     }

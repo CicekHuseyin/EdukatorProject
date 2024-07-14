@@ -78,7 +78,7 @@ namespace Presentation.Layer
 			app.UseStaticFiles();
 
 			app.UseRouting();
-
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
@@ -87,6 +87,14 @@ namespace Presentation.Layer
 					name: "default",
 					pattern: "{controller=Default}/{action=Index}/{id?}");
 			});
-		}
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
+        }
 	}
 }

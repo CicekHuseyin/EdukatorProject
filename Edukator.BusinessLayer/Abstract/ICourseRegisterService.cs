@@ -9,6 +9,7 @@ namespace Edukator.BusinessLayer.Abstract
 {
     public interface ICourseRegisterService : IGenericService<CourseRegister>
     {
-        List<CourseRegister> CourseRegisterListWithCoursesAndUsers();
+        List<CourseRegister> TCourseRegisterListWithCoursesAndUsers();
+        List<CourseRegister> TCourseRegisterListWithCoursByUser(int id);
     }
 }
