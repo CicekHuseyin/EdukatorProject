@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+@await Component.InvokeAsync("_ContactHeaderPartial")
+
+<body>
+    <!--header-->
+    @await Component.InvokeAsync("_ContactNavbarPartial")
+    <!--/header-->
+    <!-- breadcrumb -->
+    @await Component.InvokeAsync("_ContactAboutGridPartial")
+    <!--//breadcrumb-->
+    <!-- contacts-5-grid -->
+    
+    @await Component.InvokeAsync("_ContactContentPartial")
+
+    @await Component.InvokeAsync("_ContactMapPartial")
+    <!--/footer-->
+    @await Component.InvokeAsync("_ContactFooterPartial")
+    <!-- //footer -->
+    <!-- Js scripts -->
+    <!-- move top -->
+    @await Component.InvokeAsync("_ContactScriptPartial")
+</body>
+
+</html>
