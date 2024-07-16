@@ -1,4 +1,5 @@
-﻿<div class="w3l-contact-10 py-5" id="contact">
+﻿@model Edukator.EntityLayer.Concreate.Contact
+<div class="w3l-contact-10 py-5" id="contact">
     <div class="form-41-mian pt-lg-4 pt-md-3 pb-lg-4">
         <div class="container">
             <div class="heading text-center mx-auto">
@@ -37,27 +38,27 @@
                 </div>
             </div>
             <div class="form-inner-cont mt-5">
-                <form action="#" method="post" class="signin-form">
+                <form method="post">
                     <div class="form-grids">
                         <div class="form-input">
-                            <input type="text" name="NameSurname" placeholder="Adınız Soyadınızı Girin *"
+                            <input type="text" asp-for="NameSurname" placeholder="Adınız Soyadınızı Girin "
                                    required="" />
                         </div>
                         <div class="form-input">
-                            <input type="text" name="Subject" placeholder="Konuyu Girin "
+                            <input type="text" asp-for="Subject" placeholder="Konuyu Girin "
                                    required />
                         </div>
                         <div class="form-input">
-                            <input type="email" name="Email" placeholder="Mailinizi Girin"
+                            <input type="email" asp-for="Mail" placeholder="Mailinizi Girin"
                                    required />
                         </div>
                         <div class="form-input">
-                            <input type="text" name="Phone" placeholder="Telefon Numaranızı Girin"
+                            <input type="text" asp-for="Phone" placeholder="Telefon Numaranızı Girin"
                                    required />
                         </div>
                     </div>
                     <div class="form-input">
-                        <textarea name="Message" placeholder="Mesajınızı Girin"
+                        <textarea asp-for="Message" placeholder="Mesajınızı Girin"
                                   required=""></textarea>
                     </div>
                     <div class="text-right">

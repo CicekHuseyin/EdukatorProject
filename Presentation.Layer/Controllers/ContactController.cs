@@ -17,13 +17,8 @@ namespace Edukator.PresentationLayer.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public PartialViewResult AddMessage()
-        {
-            return PartialView();
-        }
         [HttpPost]
-        public IActionResult AddMessage(Contact contact)
+        public IActionResult Index(Contact contact)
         {
             _contactService.TInsert(contact);
             return RedirectToAction("Index");
