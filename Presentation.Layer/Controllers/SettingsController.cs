@@ -20,6 +20,7 @@ namespace Edukator.PresentationLayer.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            //Git i deniyorum
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             UserEditViewModel userEditViewModel = new UserEditViewModel();
             userEditViewModel.Name = values.Name;
